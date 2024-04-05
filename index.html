@@ -1,0 +1,81 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Phone Image - Daniel Diaz</title>
+        <style>
+            .contenedor-celular {
+                position: relative;
+                width: 240px;
+                height: 500px; 
+            }
+
+            .imagen-celular {
+                width: 100%;
+                height: auto;
+            }
+
+            .imagen-chocolate {
+                position: absolute;
+                width: 50%;
+                height: auto;
+                bottom: 20%;
+                left: 69%;
+            }
+
+            .contenedor-imagenes {
+                position: absolute;
+                top: 1px; 
+                left: 14%;
+                width: 175px; 
+                height: 360px; 
+                overflow: hidden;
+                z-index: -10;
+                border-radius: 30px;
+            }
+
+            .contenedor-imagenes img {
+                width: 100%;
+                height: 100%;
+                display: none; 
+            }
+
+            .imagen-activa {
+                display: block  !important; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contenedor-celular">
+            <img src="https://www.chocoprints.co/wp-content/uploads/2024/04/celular.png" alt="Celular" class="imagen-celular">
+            <img src="https://www.chocoprints.co/wp-content/uploads/2024/04/chocolate.png" alt="Celular" class="imagen-chocolate">
+
+            <div class="contenedor-imagenes">
+                <img src="https://www.chocoprints.co/wp-content/uploads/2024/04/2.jpeg" alt="Imagen 1" class="imagen-activa">
+                <img src="https://www.chocoprints.co/wp-content/uploads/2024/04/1.jpeg" alt="Imagen 2">
+                <img src="https://www.chocoprints.co/wp-content/uploads/2024/04/3.jpeg" alt="Imagen 3">
+                <img src="https://www.chocoprints.co/wp-content/uploads/2024/04/4.jpeg" alt="Imagen 4">
+                <img src="https://www.chocoprints.co/wp-content/uploads/2024/04/5.jpeg" alt="Imagen 5">
+                <img src="https://www.chocoprints.co/wp-content/uploads/2024/04/6.jpeg" alt="Imagen 6">
+                <img src="https://www.chocoprints.co/wp-content/uploads/2024/04/7.jpeg" alt="Imagen 7">
+                
+            </div>
+        </div>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    let imagenes = document.querySelectorAll('.contenedor-imagenes img');
+    let indiceActual = 0;
+
+    function cambiarImagen() {
+        imagenes[indiceActual].classList.remove('imagen-activa');
+        indiceActual = (indiceActual + 1) % imagenes.length;
+        imagenes[indiceActual].classList.add('imagen-activa');
+    }
+
+    setInterval(cambiarImagen, 5000);
+});
+
+        </script>
+    </body>
+    </html>
